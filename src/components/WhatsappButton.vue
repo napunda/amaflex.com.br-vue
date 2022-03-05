@@ -7,7 +7,7 @@
     bottom
     color="#25D366"
     height="50px"
-    class="white--text px-5 text-none index"
+    class="white--text px-5 text-none transform"
   >
     <div class="text-h6">
       <v-icon class="pr-2" color="">fab fa-whatsapp</v-icon>
@@ -20,4 +20,8 @@ export default {
   name: "WhatsappButton",
 };
 </script>
-<style scoped></style>
+<style scoped>
+.transform:hover {
+  transform: scale(1.1);
+}
+</style>

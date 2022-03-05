@@ -1,10 +1,16 @@
 <template>
-  <div class="contact">
-    <div class="text-h5 text-md-h4 roboto">Entre em contato:</div>
-    <v-form ref="form" v-model="valid" lazy-validation class="py-14 width-100">
+  <div class="contact display-1">
+    <div class="text-h5 text-md-h4">Entre em contato:</div>
+    <v-form
+      ref="form"
+      v-model="valid"
+      lazy-validation
+      class="py-10 width-100 font"
+    >
       <label for="field-name">Nome:</label>
       <v-text-field
-        id="field-name"
+        class="field-shadow"
+        id="field-shadow"
         background-color="#dcdbdb"
         solo
         v-model="name"
@@ -13,6 +19,7 @@
       ></v-text-field>
       <label for="field-email">E-mail:</label>
       <v-text-field
+        class="field-shadow"
         elevation
         background-color="#dcdbdb"
         id="field-email"
@@ -24,6 +31,7 @@
       ></v-text-field>
       <label for="field-message">Mensagem:</label>
       <v-textarea
+        class="field-shadow"
         elevation
         background-color="#dcdbdb"
         id="field-message"
@@ -36,20 +44,21 @@
         :rules="messageRules"
       >
       </v-textarea>
-
-      <v-btn
-        fixed
-        right
-        width="200px"
-        large
-        elevation="2"
-        :disabled="!valid"
-        color="primary"
-        class="font"
-        @click="validate"
-      >
-        Enviar
-      </v-btn>
+      <div class="d-flex justify-end">
+        <v-btn
+          d-flex
+          justify-end
+          width="200px"
+          large
+          elevation="2"
+          :disabled="!valid"
+          color="primary"
+          class="text-h5 text-none shadow"
+          @click="validate"
+        >
+          Enviar
+        </v-btn>
+      </div>
     </v-form>
   </div>
 </template>
@@ -75,7 +84,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 label {
   margin-left: 15px;
 }
@@ -83,7 +92,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: "PFDinDisplay_Regular" !important;
 }
 .width-100 {
   width: 100%;
@@ -91,7 +100,18 @@ label {
 .contact {
   color: #43749e;
 }
-#field-name.v-input__slot {
-  box-shadow: 20px 20px 50px 15px rgb(0, 0, 0) !important;
+.font {
+  font-size: 22px !important;
+}
+.text-h5 {
+  font-size: 30px !important;
+}
+.field-shadow .v-input__slot {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14),
+    0 1px 14px 0 rgba(0, 0, 0, 0.12) !important;
+}
+.shadow {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14),
+    0 1px 14px 0 rgba(0, 0, 0, 0.12) !important;
 }
 </style>
