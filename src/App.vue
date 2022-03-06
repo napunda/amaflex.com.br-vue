@@ -3,20 +3,20 @@
     <v-main>
       <router-view />
     </v-main>
-    <WhatsappButtonImage />
+    <WhatsappButtonImage class="hidden-xs-only" />
+    <WhatsappButton class="d-sm-none" />
   </v-app>
 </template>
 
 <script>
 import WhatsappButtonImage from "./components/WhatsappButtonImage.vue";
+import WhatsappButton from "./components/WhatsappButton.vue";
 export default {
   components: {
     WhatsappButtonImage,
+    WhatsappButton,
   },
   name: "App",
-  data: () => ({
-    //
-  }),
 };
 </script>
 <style>

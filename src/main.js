@@ -6,7 +6,7 @@ import VuexRest from "./plugins/vuex-rest";
 import VueGrid from "@sneverton/vue-grid";
 import "@sneverton/vue-grid/dist/vue-grid.css";
 import vuetify from "./plugins/vuetify";
-import VueTheMask from 'vue-the-mask';
+import VueTheMask from "vue-the-mask";
 
 const server =
   process.env.NODE_ENV === "development"

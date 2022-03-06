@@ -2,18 +2,17 @@
   <div class="desktop">
     <v-row align="center">
       <v-col cols="12" md="4" class="hidden-xs-only hidden-sm-only">
-        <v-img src="/images/pipes.png" alt=""> </v-img>
+        <v-img :src="pipes" alt="Mangueiras Amaflex"> </v-img>
       </v-col>
       <v-col cols="12" md="4">
-        <img src="/images/amaflex-logo.png?v4" width="100%" />
+        <img :src="logo" width="100%" alt="Amaflex" />
       </v-col>
       <v-col cols="12" md="4"
         ><Form class="mx-4" />
         <div width="100%" class="display-1 font ml-md-9 ml-4">
-          <div>Endereço:</div>
-          <div class="margin">Rodovia BR-163, - km-1035, Matupá, MT</div>
-          <div>Telefone:</div>
-          <div class="font-weight-bold">(66) 99984-6882</div>
+          <div class="margin" v-for="itens in contactList" :key="itens.item">
+            {{ itens.item }}
+          </div>
         </div>
       </v-col>
     </v-row>
@@ -23,6 +22,16 @@
 <script>
 import Form from "./Form.vue";
 export default {
+  data: () => ({
+    pipes: "/images/pipes.png",
+    logo: "/images/amaflex-logo.png",
+    contactList: [
+      { item: "Endereço" },
+      { item: "Rodovia BR-163, - km-1035, Matupá, MT" },
+      { item: "Telefone:" },
+      { item: "(66) 99984-6882:" },
+    ],
+  }),
   name: "Desktop",
   components: {
     Form,
@@ -44,7 +53,10 @@ export default {
   color: #807f7f;
   line-height: normal;
 }
-.margin {
+.margin:nth-child(2) {
   margin-bottom: 20px;
+}
+.margin:nth-child(4) {
+  font-weight: 800;
 }
 </style>
